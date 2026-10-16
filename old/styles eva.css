@@ -1,0 +1,193 @@
+body {
+    background:  	#1d1a2f;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: auto;
+}
+
+@font-face {
+    font-family: 'Cyberpunk';
+    src: url('fonts/Cyberpunk.woff2') format('woff2'),
+        url('fonts/Cyberpunk.woff') format('woff'),
+        url('fonts/Cyberpunk.ttf') format('truetype');
+}
+
+/* original eva font, vr big, take out later */
+@font-face {
+    font-family: 'Matiesse EB';
+    src:url('fonts/EVA-Matisse_Classic.woff2') format('woff2'),
+        url('fonts/EVA-Matisse_Classic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Reserve Con';
+    src: url('fonts/reserve-condensed-bold.woff2') format('woff2'),
+        url('fonts/reserve-condensed-bold.woff') format('woff'),
+        url('fonts/reserve-condensed-bold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('fonts/Ubuntu-R.woff2') format('woff2');
+}
+
+
+
+.hazard-background {
+  height: 30px;
+  color: white;
+  padding: 5px;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    #000,
+    #000 20px,
+    #ffb101 20px,
+    #ffb101 40px
+  );
+}
+
+
+.page {
+    display: flex;
+    
+    padding: 5px;
+    gap: 5px;
+    box-sizing: border-box;
+
+
+
+    
+}
+
+.sidebar {
+
+    width: 130px;
+    position: fixed;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 0;
+    flex-shrink: 0;
+    top: 0;
+    position: sticky;
+    overflow-y: auto;
+    align-self: flex-start;
+    font-family: 'Ubuntu';
+
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #3f6d4e  ;
+    color: #FFFFFF;
+}
+
+.sidebar a:hover {
+    background-color: #8bd450 ;
+    color: #19001A;
+}
+
+/* .sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+} */
+
+/* div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+} */
+
+/* @media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+  div.header {margin-top: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+} */
+
+
+
+.content {
+  max-width: 1000px;
+  background:#734f9a;
+  /* margin: auto; */
+  color: #FFFFFF;
+  padding: 10px 16px;
+  font-family: 'Ubuntu', Georgia, 'Times New Roman', Times, serif;
+  border-style: solid;
+  border-color: #19001A;
+  border-top: none;
+  flex: 1 0 auto;
+  /* width:100%; */
+  
+  
+}
+
+.header {
+
+  background: #965fd4;
+  top: 0;
+  padding: 0px 16px;
+  color: #19001A;
+  
+  border-style:solid;
+  font-family: 'Ryzes', Georgia, 'Times New Roman', Times, serif;
+  font-style: normal;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  
+
+  /* box-shadow: 10px 10px #868282; */
+}
+
+.header h1 {
+    font-size: 40px;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    font-weight: normal;
+    font-family: 'Reserve Con';
+}
+
+.selbtn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #3f6d4e  ;
+    color: #E6FFE6;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-style:solid;
+    border-color: #19001A;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-width: 2px;
+    font-weight: normal;
+}
+.selbtn:hover {
+    background-color: #8bd450 ;
+    color: #19001A;
+    
+
+}
