@@ -7,4 +7,6 @@ The title is pretty self explanatory, but I wanted to create a space to show my 
 4. Nostalgia. Loosely inspired by http://onemorelevel.com/, a flash game website I spent lots of time on in my childhood.
 5. Learning. I want to learn the basics of how websites are structured and built. I don't want AI to build the whole thing for me.
 
+The SVG icons used as icons came from my installation of Linux Mint on my desktop, which is why (I think?) this project uses the GNU general public License.
+
 

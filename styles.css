@@ -10,31 +10,11 @@ body {
 }
 
 @font-face {
-    font-family: 'Cyberpunk';
-    src: url('fonts/Cyberpunk.woff2') format('woff2'),
-        url('fonts/Cyberpunk.woff') format('woff'),
-        url('fonts/Cyberpunk.ttf') format('truetype');
-}
-
-/* original eva font, vr big, take out later */
-@font-face {
-    font-family: 'Matiesse EB';
-    src:url('fonts/EVA-Matisse_Classic.woff2') format('woff2'),
-        url('fonts/EVA-Matisse_Classic.ttf') format('truetype');
-}
-@font-face {
     font-family: 'Reserve Con';
     src: url('fonts/reserve-condensed-bold.woff2') format('woff2'),
         url('fonts/reserve-condensed-bold.woff') format('woff'),
         url('fonts/reserve-condensed-bold.ttf') format('truetype')
 }
-
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('fonts/Ubuntu-R.woff2') format('woff2');
-}
-
-
 
 
 .page {
@@ -43,18 +23,14 @@ body {
     padding: 5px;
     gap: 5px;
     box-sizing: border-box;
-
-
-
+    margin-left: 6%;
     
 }
-
-
 
 .sidebar-col {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
+    /* align-self: flex-start; uncomment to make this static*/
     flex-shrink: 0;
     gap: 5px;
     
@@ -63,20 +39,19 @@ body {
 .sidebar {
 
     width: 130px;
-    position: fixed;
+
     background: #000000;
     overflow-x: hidden;
     padding: 0px;
     flex-shrink: 0;
-    top: 0;
+
     position: sticky;
     overflow-y: auto;
     align-self: flex-start;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    border-style: none;
-    border: 0px 2px 0px 0px;
     border-color: #1E1B18;
     top: 5px;
+
 
 }
 
@@ -91,17 +66,10 @@ body {
     border-width: 0px;
     color: #1E1B18;
     /* margin-top: 4px; */
-    border-bottom: none;
-    
-    
-
-    
+    border-bottom: none;  
 }
 
-.sidebar a:last-child{
-  border-bottom: 2px solid #000000;
-  border-width: 0px;
-}
+
 
 
 
@@ -114,13 +82,33 @@ body {
 
 }
 
+.sidebar img {
+    margin: -4px 5px -4px 0px;
+    width: 20px;
+    height: auto;
+    border: 0px;
+
+}
+
 
 @media screen and (max-width: 500px) {
     .page{
         flex-direction: column;
+        margin-left: 0;          /* undo the 6% offset that pushed everything right */
+        margin-right: 0;
+        align-items: center;     /* centres the sidebar and content columns */
+        width: 100%;
+    }
+
+    .content{
+        position: center;
     }
   
 
+
+    .sidebar-col{
+        width: 100%;
+    }
     .sidebar{
         width: 100%;
         height: auto;
@@ -131,6 +119,8 @@ body {
     .sidebar a {
     text-align: center;
     float: none;
+    padding-top: 3%;
+    padding-bottom: 3%;
     
   }
 }
@@ -138,7 +128,10 @@ body {
 
 
 .content {
-  max-width: 1000px;
+    
+    counter-reset: tables figures;
+  min-width: 0;
+  max-width: clamp(560px, 71%, 1080px);
   background: #f4f4f9;
   /* margin: auto; */
   color: #000000;
@@ -149,11 +142,32 @@ body {
   border-width: 0px;
   flex: 1 1 auto;
   /* Border 0 for now */
-  text-align: justify;
+  text-align: left;
   text-justify: inter-word;
+  hyphens: auto;
+  font-size: 17px;
+  line-height: 1.7;
   
   
 }
+
+.content p {
+    max-width: 80ch;
+    margin-bottom: 0.5em;
+}
+
+
+
+
+footer{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    text-align: center;
+    padding:10px;
+    color: #F4F4F9;
+
+}
+
 
 .header {
 
@@ -162,7 +176,8 @@ body {
   padding: 0px 16px;
   color: #F4F4F9;
   
-  border-style:solid;
+  border-style:none;
+  border-bottom: solid #1E1B18;
   font-family: 'Reserve Con', Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -170,11 +185,25 @@ body {
   align-items: center;
   flex-shrink: 0;
   position:relative;
+  overscroll-behavior: contain;
+  
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  
   
 
   
 
   /* box-shadow: 10px 10px #868282; */
+}
+
+.header img{
+    width: 40px;
+    height: auto;
+    border: none;
+    margin: 0px, 10px, -10px, 10px;
+    /* top right bottom left */
 }
 
 .header h1 {
@@ -183,6 +212,8 @@ body {
     margin-top: 10px;
     font-weight: normal;
     font-family: 'Reserve Con';
+    margin-left: 5%;
+
 }
 
 .blockMargin{
@@ -199,6 +230,14 @@ body {
 img{
     margin: 0px 5px 5px 0px;
     border: 1px solid #5366a6;
+    max-width: 50%;
+    
+}
+
+img.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img.left{
@@ -219,4 +258,100 @@ img.right{
     float:right;
     max-width: 45%;
     height:auto;
+    margin: 0 0 0.75em 1.25em;
+}
+
+ul {
+    text-align: left;
+    text-justify: inter-word;
+     
+}
+
+.content figcaption{
+    
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.1em;
+    padding-bottom: 0.5em;
+    color: #1E1B18;
+}
+
+.content figcaption::before{
+    content:'Figure ' counter(figures) '. ';
+}
+
+.content figure{
+    counter-increment: figures;
+}
+
+
+
+
+.content .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 70%;
+    max-width: min(100%, 550px);
+    margin: 1.75em auto;
+  
+}
+
+.content table.data {
+    counter-increment: tables;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 380px;            /* forces scroll rather than squish on phones */
+    font-size: 0.95em;
+    line-height: 1.5;
+    
+}
+
+.content table.data caption {
+    content: 'Table ' counter(tables)'. ';
+    caption-side: top;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.1em;
+    padding-bottom: 0.5em;
+    color: #1E1B18;
+}
+
+.content table.data th,
+.content table.data td {
+  padding: 0.5em 0.75em;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #DADCE0;
+}
+
+.content table.data thead th {
+  border-bottom: 2px solid #1E1B18;
+  background: #eceded;
+}
+
+.content table.data tbody th {
+  font-weight: normal;
+  color: #4a4a4a;
+  white-space: nowrap;         /* keeps "Primary turns" on one line */
+}
+
+.content table.data tbody tr:nth-child(even) {
+  background: #f0f0f3;         
+}
+
+.content table.data tbody tr:hover {
+  background: #4a4a4a;
+  color: #f4f4f9;
+           
+} 
+
+.content a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.content a:hover{
+    color:#0000EE;
+    
+    
 }

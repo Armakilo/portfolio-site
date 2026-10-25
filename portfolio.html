@@ -1,59 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    /*can put extra style code here*/
-
-
-</style>
-
 <head>
+    <link rel="icon" href="svg/x-office-addressbook.svg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /*can put extra style code here*/
+    </style>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" 
-          content="width=device-width, initial-scale=1.0">
-    <title>Adam Bateman</title>
+    <title>Projects</title>
 </head>
 
 <body>
 
-
 <div class="header" id="myHeader">
-    <p>
     
-    <h1 style="font-size: 90px; margin-bottom: 10px; font-weight: normal;">
-    Adam Bateman</h1>
-
-    </p>
-    <p>
-        <button class="selbtn" title="About Me" disabled>About</button>
-        <button class="selbtn" title="Personal & Academic Projects" href="portfolio.html">Portfolio</button>
-        <button class="selbtn" title="Projects in Progress">Ongoing Projects</button>
-        <button class="selbtn" title="Extracurricular Involvement">Activities</button>
-        <button class="selbtn" title="Linkedin, Github, ect...">Contact</button>
-        
-
-    </p>
-
+    
+    <h1 >
+    Adam Bateman - Projects
+    </h1>
 </div>
 
+<div class="page"> 
+    <div class="sidebar-col">
 
-<div class="content">
-<html>
-<body>
-    <!-- <body style = "background-color:lavender"> -->
-    
-    <h2>
-        Portfolio
-    </h2>
-    
+        <div class="sidebar">
+            <a href="index.html"><img src="svg/utilities-terminal.svg" alt="">About</a>
+            <a href="portfolio.html"><img src="svg/package-x-generic.svg" alt="">Projects</a>
+            <a href="docs/ab_resume.pdf" target="_blank"><img src="svg/video-x-generic.svg" alt="">Resume/CV</a>
+            <a href="https://github.com/Armakilo" target="_blank"><img src="svg/application-x-executable.svg" alt="">GitHub</a>
+            <a href="https://www.linkedin.com/in/abateman" target="_blank"><img src="svg/addressbook.svg" alt="">LinkedIn</a>
+        </div>
+
+    </div>
+
+
+
+    <div class="content">
+
+        <p>
+            This page details various projects that I have worked on during my time at University. The list of projects can be seen in the directory
+            below. All of these projects are accompained with some sort of result/documentation accessable via clickable links. More projects coming soon.
+        </p>
+
+        <h3 style="margin-bottom: 0px;">
+            Directory
+            
+        </h3>
+        <ul style="margin-top: 0px;">
+            <li><a href="#SDC">FSAE Shutdown Circuit</a></li>
+            <li><a href="#scorbot">SCORBOT Controller</a></li>
+            <li><a href="#harvest">Harvest Competition</a></li>
+            <li><a href="#count">Modulo 2345 Up/Down Counter</a></li>
+            <li><a href="#transformer">0.660/14.4 kV Power Transformer</a></li>
+            
+        </ul>
+
+        <!-- <body style = "background-color:lavender"> -->
+
+        <h2 id="SDC" class="underline", style="margin-bottom: 1px;">
+            FSAE Shutdown Circuit
+        </h2>
+
+        
+
+
+        <p style="margin-top: 3px;" >
+            <i>
+                <a href="https://www.unbracing.com/">UNB Formula Racing</a> | December 2025 - August 2026
+            </i>
+        </p>
+
+
+        <figure>
+            <img alt="Shutdown Circuit" class="center" src="images/sdc.webp">
+            <figcaption>Shutdown Circuit testing setup.</figcaption>
+        </figure>
+
+        <p>            
+            Members of UNB's Engineering and Business faculties formed UNB formula racing in September 2025. As a new club, they needed to design a car from scratch. This included all of the electronics that were required in a Formula SAE car. The first electronics to be designed were for the shutdown system, a safety system that isolates the high voltage battery if a fault condition is met. I was tasked with designing the PCB that connects these sensors and cuts off current to the isolation relays when a fault occurs.
+        </p>
+
+        
+        <ul>
+            <li>Consulted battery isolation relay datasheet to find design constraints</li>
+            <li>Referenced established design and considered how they could be applied to our car.</li>
+            <li>Considered MOSFETs, JFETs, BJTs, and solid state/mechanical relays to make up the path going to the isolation relays</li>
+            <li>Chose automotive-grade mechanical relays based off of reliability, isolation, and simplicity.</li>
+            <li>Fed the reset pin of an S-R latch to implement with senor's inverted inputs to implement the latching function required in the FSAE rulebook</li>
+            <li>Ordered components, assembled PCB, and tested functionality, confirming operation</li>
+        </ul>
+
+
+
+        <h2 id="scorbot" class="underline", style="margin-bottom: 1px;">
+            <a href = "docs/3031_FinalProject.pdf" target="_blank">SCORBOT Controller</a>
+        </h2>
+
+        
+
+
+        <p style="margin-top: 3px;" >
+            <i>
+                <a href="https://www.unb.ca/academics/calendar/undergraduate/current/frederictoncourses/electricalandcomputerengineering/ece-3031.html">ECE 3031: Electrical and Computer Engineering Design</a> | February-April 2026
+            </i>
+        </p>
+
+        <figure>
+            <img alt="Motor controller GUI" class="center" src="images/motor.webp">
+            <figcaption>Motor controller GUI</figcaption>
+        </figure>
+
+        <p>            
+            ECE 3031 was a project course that also covered miscellaneous pieces of relevant knowledge that were not covered in other courses, such as kinematics and thermodynamics. The class was a project class where students were ultimately tasked with developing a motor controller for a SCORBOT-ER Vplus. The project required that we move three motors to move the gripper of the robot was able to move over a barrier and move in a straight, diagonal line. It was a group project, and my main responsibility was the human-machine-interface.
+        </p>
+
+        
+        <ul>
+            <li>Our group used an Elegoo MEGA 2560 controller, with an Adafruit DRV8871 Breakout Board to control the motor.</li>
+            <li>Helped with the initial integration of the PID Controller.</li>
+            <li>Designed and implemented the component interconnection circuit.</li>
+            <li>Used op-amps to design a motor current monitoring system to obtain torque information over the full-scale range of the Elegoo’s ADC.</li>
+            <li>Created a Windows Form using Microsoft Visual Studio’s .NET framework. To display individual motor RPM and position. See the 'GUI' branch of the GitHub.</li>
+            <li>Sent custom UART data packets between the Elegoo board and a desktop computer to communicate information and allow motor control from computer.</li>
+        </ul>
+
+
+
+        <h2 id="harvest" class="underline", style="margin-bottom: 1px;">
+            <a href="https://github.com/Armakilo/Harvest-26">Harvest Competition</a>
+        </h2>
+
+        
+        <p style="margin-top: 3px;" >
+            <i>
+                <a href="https://www.unb.ca/academics/calendar/undergraduate/current/frederictoncourses/electricalandcomputerengineering/ece-3232.html">ECE 3232: Embedded System Design</a> | January-April 2026
+                
+            </i>
+        </p>
+
+        <figure>
+            <img class="center" src="images/harvest.webp" style="max-width: 70%;">
+            <figcaption>Harvest group & rover</figcaption>
+        </figure>
+
+        <p>            
+            Our embedded systems class had a course project, a competition where electrical engineering students had to design a rover that could navigate a playing field and complete various tasks that would let harvesters, created by mechatronics students, into zones that contained “ore” that they could collect for points. Teams consisted of multiple rovers and one harvester, and competed to obtain the most points. Rover design was a group effort, that was split up into multiple tasks that I did a considerable portion of.
+        </p>
+
+        
+        <ul>
+            <li>Programmed a PIC16F18865 development board to implement tasks</li>
+            <li>Interfaced with a UART-based API, sending data to the game controller</li>
+            <li>Used an infrared sensor array to successfully follow a line, iteratively tuning for accuracy and edge-case scenarios, and consistently completed task during competition.</li>
+            <li>Communicated with a MFRC522 development board using SPI, successfully retrieving the UID of an RFID card.</li>
+            <li>Tested and modified setup code to make operation more consistent.</li>
+            <li>Used Microchip's SNAP programmer to place watches on key variables and confirm functionality.</li>
+        </ul>
+
+        <h2 id="count" class="underline", style="margin-bottom: 1px;">
+            <a href="https://github.com/Armakilo/mod2345_counter" target="_blank">Modulo 2345 Up/Down Counter</a>
+        </h2>
+
+        
+
+
+        <p style="margin-top: 3px;" >
+            <i>
+                <a href="https://www.unb.ca/academics/calendar/undergraduate/current/frederictoncourses/electricalandcomputerengineering/ece-2215.html" target="_blank">ECE2215: Digital Logic Design Lab</a> | October-November 2024
+            </i>
+        </p>
+
+
+        
+        <p>            
+            Our group was tasked with making a counter that counts up to 2345 in radix 14. It needed to be able to count up/down, and switch the displayed value to radix 8. It also had to accept valid pre-loaded values, as a start point for counting. It was a group project, so I will list my key contributions below.
+        </p>
+
+        
+        <ul>
+            <li>We used VHDL and Quartus Prime to design our circuit.</li>
+            <li>Instead of using the IEEE numeric libraries available in VHDL, our group opted to design fundamental elements (such as D, T, and J-K flip flops) to gain a better understanding of digital circuits.</li>
+            <li>Designed the main counting logic, for both radixes.</li>
+            <li>Integrated various components, instantiating the necessary files to our top-level design.</li>
+            <li>Used waveform simulations and testing on hardware to verify functionality.</li>
+            <li>The design was loaded onto a Cyclone IV board for testing, and was successfully demonstrated to our professor.</li>
+        </ul>
+        
+
+
+        <h2 id="transformer" class="underline", style="margin-bottom: 1px;">
+            <a href="docs/3612_DesignProject.pdf" target="_blank">0.660/14.4 kV Power Transformer</a>
+        </h2>
+
+        
+
+
+        <p style="margin-top: 3px;" >
+            <i>
+                <a href="https://www.unb.ca/academics/calendar/undergraduate/current/frederictoncourses/electricalandcomputerengineering/ece-3612.html" target="_blank">ECE 3612: Electric Machines and Design in Sustainable Energy Systems</a> | October 2025
+            </i>
+        </p>
+
+        <div class="table-wrap">
+            <table class="data">
+                <caption>Table 1. Abridged Design Outcome</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td scope="row">Core material</td><td>Square50</td></tr>
+                <tr><td scope="row">Core geometry</td><td>Core-Type</td></tr>
+                <tr><td scope="row">Primary Side Turns</td><td>367</td></tr>
+                <tr><td scope="row">Primary Side Conductor<td>AWG 4</td></tr>
+                <tr><td scope="row">Secondary Side Turns</td><td>8,686</td></tr>
+                <tr><td scope="row">Secondary Side Conductor</td><td>AWG 22</td></tr>
+                </tbody>
+            </table>
+            </div>
+
+
+
+            
+
+        <p>            
+            After a solar panel's output is inverted (DC-AC), it must be converted to a more usable voltage for long-distance transportation. Students were given design assumptions and tasked with designing the transformer that converts between 0.660 and 14.4 kV at 60 Hz, and is rated for 35 kVA.
+        </p>
+
+        
+        <ul>
+            <li>Chose the correct core material and dimensions using flux density, current density, frequency, and rated power calculations.</li>
+            <li>Calculated number of turns on the primary side using the turns/volts index, and considered assumed efficiency while calculating the number of turns on the secondary side.</li>
+            <li>Found the voltage regulation, in percent, by comparing the ideal number of turns to the efficiency-compensated number of turns.</li>
+            <li>Wrote a design report with calculations to efficiently communicate findings, which achieved full marks.</li>
+        </ul>
+
+
+
+    </div>
+</div>
+
+<footer>
     <p>
-        Adam Bateman is an Electrical Engineering student in his third year of university
+        Copyright © 2026 Adam Bateman
     </p>
-</body>
 
-</html>
-
-<div>
+</footer>
