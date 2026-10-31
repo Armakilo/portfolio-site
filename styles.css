@@ -11,6 +11,7 @@ body {
 
 @font-face {
     font-family: 'Reserve Con';
+    font-display: swap;
     src: url('fonts/reserve-condensed-bold.woff2') format('woff2'),
         url('fonts/reserve-condensed-bold.woff') format('woff'),
         url('fonts/reserve-condensed-bold.ttf') format('truetype')
@@ -35,6 +36,7 @@ body {
     gap: 5px;
     
 }
+
 
 .sidebar {
 
@@ -91,39 +93,7 @@ body {
 }
 
 
-@media screen and (max-width: 500px) {
-    .page{
-        flex-direction: column;
-        margin-left: 0;          /* undo the 6% offset that pushed everything right */
-        margin-right: 0;
-        align-items: center;     /* centres the sidebar and content columns */
-        width: 100%;
-    }
 
-    .content{
-        position: center;
-    }
-  
-
-
-    .sidebar-col{
-        width: 100%;
-    }
-    .sidebar{
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0px;
-        bottom: 2px;
-    }
-    .sidebar a {
-    text-align: center;
-    float: none;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    
-  }
-}
 
 
 
@@ -227,6 +197,43 @@ footer{
     display: block;
 }
 
+
+.portrait-col{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 5px;
+
+}
+
+
+.profile-row {
+    display: flex;
+    gap: 1.25em;
+    align-items: flex-start;
+    margin-bottom: 1em;
+}
+
+.profile-photo {
+    flex: 0 0 32%;
+    max-width: 32%;
+}
+
+.profile-photo img.portrait {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 2px 0 0 0;
+    border: 1px solid #5366a6;
+}
+
+.profile-text {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
 img{
     margin: 0px 5px 5px 0px;
     border: 1px solid #5366a6;
@@ -252,6 +259,7 @@ img.portrait{
     height: auto;
     margin: 01;
     margin: 2px 10px 0px 0px;
+
 }
 
 img.right{
@@ -355,3 +363,46 @@ ul {
     
     
 }
+
+
+@media screen and (max-width: 500px) {
+    .page{
+        flex-direction: column;
+        margin-left: 0;          /* undo the 6% offset that pushed everything right */
+        margin-right: 0;
+        align-items: center;     /* centres the sidebar and content columns */
+        width: 100%;
+    }
+
+    .content{
+        position: center;
+        max-width: 100%;
+    }
+  
+
+
+    .sidebar-col{
+        width: 100%;
+    }
+    .sidebar{
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0px;
+        bottom: 2px;
+    }
+    .sidebar a {
+    text-align: center;
+    float: none;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    }
+
+    .profile-row{
+        display: block;
+    }
+    .profile-photo, img.portrait{
+        display: none;
+    }
+    
+  }
