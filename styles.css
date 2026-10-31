@@ -130,29 +130,29 @@ body {
 .content {
     
     counter-reset: tables figures;
-  min-width: 0;
-  max-width: clamp(560px, 71%, 1080px);
-  background: #f4f4f9;
-  /* margin: auto; */
-  color: #000000;
-  padding: 10px 16px;
-  font-family: 'Georgia','Times New Roman', Times, serif;
-  border-style: solid;
-  border-color: #1E1B18;
-  border-width: 0px;
-  flex: 1 1 auto;
-  /* Border 0 for now */
-  text-align: left;
-  text-justify: inter-word;
-  hyphens: auto;
-  font-size: 17px;
-  line-height: 1.7;
+    min-width: 0;
+    max-width: 71%;
+    background: #f4f4f9;
+    /* margin: auto; */
+    color: #000000;
+    padding: 10px 16px;
+    font-family: 'Georgia','Times New Roman', Times, serif;
+    border-style: solid;
+    border-color: #1E1B18;
+    border-width: 0px;
+    flex: 1 1 auto;
+    /* Border 0 for now */
+    text-align: left;
+    text-justify: inter-word;
+    hyphens: auto;
+    font-size: 17px;
+    line-height: 1.7;
   
   
 }
 
 .content p {
-    max-width: 80ch;
+    /* max-width: 80ch; */
     margin-bottom: 0.5em;
 }
 
